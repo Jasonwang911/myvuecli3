@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   baseUrl: './',
   outputDir: 'dist',
@@ -7,6 +9,14 @@ module.exports = {
     sourceMap: false,
     loaderOptions: {},
     modules: false
+  },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [
+        path.resolve(__dirname, './src/styles/index.scss')
+      ]
+    }
   },
   devServer: {
     host: 'localhost',
