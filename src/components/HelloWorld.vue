@@ -1,15 +1,21 @@
 <template>
   <div class="hello">
     hello组件
+   <van-button type="danger">危险按钮</van-button>
   </div>
 </template>
 
 <script>
+import { Button, Cell } from 'vant';
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
   },
+  components: {
+    VanButton: Button
+  }
 };
 </script>
 
