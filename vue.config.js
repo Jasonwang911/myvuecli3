@@ -1,10 +1,11 @@
-var path = require('path');
-var autoprefixer = require('autoprefixer');
-var pxtorem = require('postcss-pxtorem');
+var path = require('path')
+var autoprefixer = require('autoprefixer')
+var pxtorem = require('postcss-pxtorem')
 
 module.exports = {
   publicPath: './',
   outputDir: 'dist',
+  lintOnSave: true,
   productionSourceMap: false,
   css: {
     extract: true,
@@ -25,7 +26,7 @@ module.exports = {
           }),
           pxtorem({
             rootValue: 37.5,
-            propList: ['*'],
+            propList: ['*']
           })
         ]
       }
