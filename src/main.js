@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './routers'
 import store from './store'
 import './registerServiceWorker'
-// import Vant from 'vant';
 require('@/config/rem')
-// import 'vant/lib/index.css';
+import * as filters from './filters'
 
-// Vue.use(Vant);
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.config.productionTip = false
 

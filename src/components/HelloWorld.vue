@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    hello组件
+    hello组件{{ 'new' | newsize }}
     <van-button type="danger">
       危险按钮
     </van-button>
