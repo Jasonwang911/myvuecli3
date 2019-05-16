@@ -36,14 +36,16 @@ module.exports = {
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',
-      patterns: [
-        path.resolve(__dirname, './src/styles/index.scss')
-      ]
+      patterns: [path.resolve(__dirname, './src/styles/index.scss')]
     }
   },
   devServer: {
     host: 'localhost',
     port: '7902',
-    open: true
+    open: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    }
   }
 }
