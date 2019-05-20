@@ -39,6 +39,9 @@ module.exports = {
       patterns: [path.resolve(__dirname, './src/styles/index.scss')]
     }
   },
+  configureWebpack: config => {
+    config.entry = ['babel-polyfill', './src/main.js']
+  },
   devServer: {
     host: 'localhost',
     port: '7902',
