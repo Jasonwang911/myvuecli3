@@ -1,23 +1,37 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+      name: 'index',
+      component: () => import(/* webpackChunkName: "index" */ '../views/index'),
+      meta: { title: '首页', auth: false }
     }
   ]
 })
+
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  } else {
+    document.title = 'xxx'
+  }
+  next()
+  // if($store.state.common.token != '' || to.path == '/login') {
+  //   next()
+  // }else {
+  //   next({
+  //     path: "/login",
+  //     query: {
+  //       redirect: to.fullPath
+  //     }
+  //   });
+  // }
+})
+
+export default router
