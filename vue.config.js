@@ -45,6 +45,17 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: '7902',
+    proxy: {
+      '/api': {
+        // proxy
+        target: 'http://www.baidu.com',
+        changeOrigin: true,
+        ws: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
     open: true,
     overlay: {
       warnings: true,

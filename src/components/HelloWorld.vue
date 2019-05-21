@@ -9,6 +9,7 @@
 
 <script>
 import { Button } from 'vant'
+import { mineHelpApi } from '@/apis/modules'
 
 export default {
   name: 'HelloWorld',
@@ -16,6 +17,7 @@ export default {
     VanButton: Button
   },
   mounted() {
+    mineHelpApi()
   }
 }
 </script>
