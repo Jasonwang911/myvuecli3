@@ -13,8 +13,11 @@ let baseImgPath
 if (process.env.NODE_ENV === 'development') {
   baseUrl = '/api'
   baseImgPath = ''
+} else if (process.env.NODE_ENV === 'test') {
+  baseUrl = '/test'
+  baseImgPath = ''
 } else {
-  baseUrl = ''
+  baseUrl = '/product'
   baseImgPath = ''
 }
 
